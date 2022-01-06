@@ -1,0 +1,259 @@
+body {
+    font-family: "Kameron", "Noto Sans JP", sans-serif;
+}
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+.font-sm {
+    font-size: 14px;
+}
+.font-md {
+    font-size: 17px;
+}
+.font-lr {
+    font-size: 17px;
+}
+.font-lg {
+    font-size: 25px;
+}
+.mb-sm {
+    margin-bottom: 16px !important;
+}
+.mb-lg {
+    margin-bottom: 80px !important;
+}
+.pb-sm {
+    padding-bottom: 16px !important;
+}
+.pb-lg {
+    padding-bottom: 80px !important;
+}
+.content-width {
+    width: 91.5%;
+    margin: 0 auto;
+    max-width: $contentMaxWidth;
+}
+.main-title {
+    @extend .font-lg;
+    font-weight: 600;
+    margin-bottom: 0;
+    display: block;
+}
+.sub-title {
+    @extend .font-sm;
+    color: $cSubTitle;
+}
+.flex {
+    display: flex;
+    flex-direction: column;
+}
+.header {
+
+    h1 {
+        @extend .content-width;
+    }
+    &__inner {
+        display: flex;
+        align-items: center;
+        height: $navHeight;
+        width: 100%;
+        background-color: $cBlack;
+        color: $cWhite;
+        overflow: scroll;
+    }
+    &__ul {
+        margin: auto 0;
+        display: flex;
+        list-style: none;
+    }
+    &__li {
+        padding-right: 50px;
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        &:last-child {
+            display: none;
+        }
+    }
+}
+
+#pickup {
+    @extend .content-width;
+    @extend .flex;
+    margin-top: 30px;
+}
+#container {
+    @extend .flex;
+    @extend .content-width;
+}
+.pickup {
+    &__text {
+        margin-bottom: 15px;
+        margin-top: 10px;
+    }
+    &__item {
+        a {
+            color: $cBlack;
+            text-decoration: none;
+        }
+        h2 {
+            @extend .font-md;
+        }
+    }
+    // &__read {
+    //     display: inline-block;
+    //     margin-bottom: 15px;
+    //     position: relative;
+    //     &:hover {
+    //         @include p-base(
+    //             $which: after,
+    //             $width: 100px,
+    //             $height: 1px,
+    //             $position: absolute,
+    //             $top: 20px,
+    //             // $left: -120px
+    //         ) {
+    //             background-color: $cBlack;
+    //             // transform: translateY(-10px);
+    //             transition: all 3.8s;
+    //             transition-duration: 1s;
+    //         }
+    //     }
+    // }
+}
+.blog {
+    &__ul {
+        list-style: none;
+        display: flex;
+        padding-left: 0;
+    }
+    &__category {
+        padding-left: 20px;
+    }
+    &__text {
+        width: 90%;
+        margin: 30px auto 10px;
+    }
+}
+.read-more {
+    margin: 0 auto;
+    text-align: center;
+    text-decoration: none;
+    &:hover{
+        text-decoration: none;
+    }
+}
+.author {
+    &__img {
+        margin: 0 auto;
+
+        width: 130px;
+        height: 130px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border-radius: 50%;
+    }
+    &__name {
+        text-align: center;
+    }
+}
+.ranking {
+    &__title {
+        text-align: center;
+    }
+    h4 {
+        @extend .font-sm;
+        font-weight: normal;
+    }
+}
+.archive {
+    &__title {
+        text-align: center;
+    }
+    &__ul {
+        padding-left: 0;
+    }
+    &__li {
+        padding-left: 20;
+        position: relative;
+        // padding-left:0px;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        @include line-base($which: after, $width: calc(100%), $position: relative, $top: 20px) {
+            background-color: $cBlack;
+            transform: translateX(-20px);
+        }
+    }
+}
+.footer {
+    &__inner {
+        position: relative;
+        @include p-base($height: 100%) {
+            background: $cBgGray;
+        }
+    }
+    &__container {
+        position: relative;
+        z-index: 2;
+        @extend .content-width;
+    }
+    &__wrapper {
+        @extend .flex;
+    }
+    &__about {
+        &__ul {
+            padding-left: 20px;
+        }
+        &__li {
+            padding: 0;
+            position: relative;
+            &::before {
+                content: ""; /* 疑似要素に必須 */
+                width: 0; /* 幅を0に指定 */
+                height: 0; /* 高さを0に指定 */
+                border-style: solid; /* 線の種類を指定 */
+                border-width: 8px 0px 8px 10px; /* 線の幅を指定して三角を作る */
+                border-color: transparent transparent transparent $cBlack; /* 左のみ線の色を指定 */
+                position: absolute; /* 相対位置に指定 */
+                top: 50%; /* 上から50%の位置に配置 */
+                left: -15px; /* 左から50%の位置に配置 */
+                transform: translate(-50%, -50%); /* 要素の半分ぶんだけ左上方向に移動。 */
+            }
+        }
+        &__context {
+            margin-bottom: 20px;
+        }
+    }
+    &__menu {
+        &__ul {
+            padding-left: 0px;
+        }
+        &__li {
+            position: relative;
+            // padding-left:0px;
+            padding-bottom: 20px;
+            padding-top: 20px;
+            @include line-base(
+                $which: after,
+                $width: calc(100% + 10px),
+                $position: relative,
+                $top: 20px,
+                // $left: -120px
+            ) {
+                background-color: $cBlack;
+                transform: translateX(-10px);
+            }
+        }
+    }
+    &__copy {
+        margin-top: 90px;
+        text-align: center;
+    }
+}

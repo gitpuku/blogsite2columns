@@ -1,0 +1,36 @@
+.flex {
+    flex-direction: row;
+    // flex-wrap: wrap;
+    justify-content: space-between;
+}
+.pickup__item {
+    flex-basis: 30%;
+}
+.footer__wrapper {
+    section {
+        flex-basis: 30%;
+    }
+}
+#pickup {
+    margin-bottom: 80px;
+}
+.header {
+    &__li {
+        &:last-child {
+            display: block;
+        }
+    }
+    &__inner {
+        overflow: hidden;
+    }
+}
+main {
+    flex-basis: 65%;
+}
+aside {
+    flex-basis: 30%;
+    padding-top: 18px;
+}
+footer__copy {
+    margin-top: 60px;
+}
